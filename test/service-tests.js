@@ -11,6 +11,23 @@ class TestProvider {
   ensureFolderPath (path) {
     this.folderPath = path
   }
+
+  listFolderContentsFromPath (path) {
+    this.folderPath = path
+    return ['dummy']
+  }
+
+  copyFileToRemotePath (localFilePath, remoteFolderPath) {
+    this.filePath = localFilePath
+    this.folderPath = remoteFolderPath
+    return 'remote/file.name'
+  } // copyFileToRemotePath
+
+  copyFileToLocalPath (remoteFilePath, localFolderPath) {
+    this.filePath = remoteFilePath
+    this.folderPath = localFolderPath
+    return 'local/file.name'
+  }
 }
 
 describe('Cloudstorage service tests', function () {
@@ -61,8 +78,25 @@ describe('Cloudstorage service tests', function () {
     })
 
     it('ensureFolderPath', () => {
-      cloudstorageService.ensureFolderPath('remote/path')
-      expect(provider.folderPath).to.eql('remote/path')
+      cloudstorageService.ensureFolderPath('remote/path1')
+      expect(provider.folderPath).to.eql('remote/path1')
+    })
+    it('listFolderContentsFromPath', async () => {
+      const contents = await cloudstorageService.listFolderContentsFromPath('remote/path2')
+      expect(provider.folderPath).to.eql('remote/path2')
+      expect(contents).to.be.eql(['dummy'])
+    })
+    it('copyFileToRemotePath', async () => {
+      const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote')
+      expect(provider.folderPath).to.eql('remote')
+      expect(provider.filePath).to.eql('local.file')
+      expect(remoteName).to.eql('remote/file.name')
+    })
+    it('copyFileToLocalPath', async () => {
+      const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
+      expect(provider.folderPath).to.eql('local')
+      expect(provider.filePath).to.eql('remote.file')
+      expect(localName).to.eql('local/file.name')
     })
   })
 
