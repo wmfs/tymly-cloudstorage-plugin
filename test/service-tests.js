@@ -29,6 +29,16 @@ describe('Cloudstorage service tests', function () {
     expect(cloudstorageService).to.exist()
   })
 
+  describe('no provider registered, so calling methods has no effect', () => {
+    it('ensureFolderPath', async () => {
+      await cloudstorageService.ensureFolderPath('test')
+    })
+    it('listFolderContentsFromPath', async () => {
+      const contents = await cloudstorageService.listFolderContentsFromPath('test')
+      expect(contents).to.be.null()
+    })
+  })
+
   after('shut down Tymly', async () => {
     await tymlyService.shutdown()
   })

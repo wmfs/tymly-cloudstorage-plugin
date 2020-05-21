@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/wmfs/tymly-cloudstorage-plugin/blob/master/LICENSE)
 
 
-Defines the cloudstorage service interface and provides state-resources around the service. Specific cloudstorage implements provided by additional Tymly plugins.
+Defines the cloudstorage service interface and provides state-resources around the service. Specific cloudstorage implementations provided by additional Tymly plugins.
 
 ## Service
 * cloudstorage
