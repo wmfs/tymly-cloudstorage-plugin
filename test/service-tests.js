@@ -7,6 +7,12 @@ const expect = chai.expect
 const tymly = require('@wmfs/tymly')
 const path = require('path')
 
+class TestProvider {
+  ensureFolderPath (path) {
+    this.folderPath = path
+  }
+}
+
 describe('Cloudstorage service tests', function () {
   this.timeout(process.env.TIMEOUT || 5000)
 
@@ -44,6 +50,19 @@ describe('Cloudstorage service tests', function () {
     it('copyFileToLocalPath', async () => {
       const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
       expect(localName).to.be.null()
+    })
+  })
+
+  describe('provider registered, so method calls forward to provider', () => {
+    const provider = new TestProvider()
+
+    it('register provider', () => {
+      cloudstorageService.registerProvider(provider)
+    })
+
+    it('ensureFolderPath', () => {
+      cloudstorageService.ensureFolderPath('remote/path')
+      expect(provider.folderPath).to.eql('remote/path')
     })
   })
 
