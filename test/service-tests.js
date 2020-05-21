@@ -37,6 +37,14 @@ describe('Cloudstorage service tests', function () {
       const contents = await cloudstorageService.listFolderContentsFromPath('test')
       expect(contents).to.be.null()
     })
+    it('copyFileToRemotePath', async () => {
+      const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote')
+      expect(remoteName).to.be.null()
+    })
+    it('copyFileToLocalPath', async () => {
+      const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
+      expect(localName).to.be.null()
+    })
   })
 
   after('shut down Tymly', async () => {
