@@ -10,6 +10,16 @@
 
 Defines the cloudstorage service interface and provides state-resources around the service. Specific cloudstorage implementations provided by additional Tymly plugins.
 
-## Service
-* cloudstorage
+## Cloud Storage Service
+
+The `cloudstorage` defines four methods 
+
+* ensureFolderPath
+* listFolderContentsFromPath
+* copyFileToRemotePath
+* copyFileToLocalPath
+
+The default implementations of these methods do nothing. 
+
+Once a storage provider has registered with the cloudstorage service, the methods are forwarded to that provider. A provider may implement as many or as few of the methods as it wishes. A read-only provider might only implement `ensureFolderPath` and `listFolderContentsFromPath`, for example.  
 
