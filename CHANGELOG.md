@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.1.0...v1.1.1) (2020-05-29)
+
+
+### 🐛 Bug Fixes
+
+* add main entry to package.json ([0219f76](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/0219f7655618bb9d5be36ff1fa8a10a96788b08a))
+
 # [1.1.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.0.0...v1.1.0) (2020-05-29)
 
 
