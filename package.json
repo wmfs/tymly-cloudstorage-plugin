@@ -1,7 +1,7 @@
 {
   "name": "@wmfs/tymly-cloudstorage-plugin",
   "version": "0.0.0-semantically-released",
-  "description": "Defines the cloudstorage service interface and provides state-resources around the service. Specific cloudstorage implements provided by additional Tymly plugins.",
+  "description": "Defines the cloudstorage service interface and provides state-resources around the service. Specific cloudstorage implementations provided by additional Tymly plugins.",
   "homepage": "https://github.com/wmfs/tymly-cloudstorage-plugin#readme",
   "author": "West Midlands Fire Service",
   "keywords": [
