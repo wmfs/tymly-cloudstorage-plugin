@@ -1,0 +1,2 @@
+This document specifies a JSON object called a "RemoteFolder".
+A RemoteFolder MUST have a string field named "remoteFolderPath".
