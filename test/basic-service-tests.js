@@ -40,6 +40,10 @@ describe('No provider registered, so calling methods has no effect', function ()
     const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote')
     expect(remoteName).to.be.null()
   })
+  it('copyFileToRemotePath with filename', async () => {
+    const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote', 'new.name')
+    expect(remoteName).to.be.null()
+  })
   it('copyFileToLocalPath', async () => {
     const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
     expect(localName).to.be.null()

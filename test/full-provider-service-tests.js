@@ -15,10 +15,11 @@ class TestProvider {
     return ['dummy']
   }
 
-  copyFileToRemotePath (localFilePath, remoteFolderPath) {
+  copyFileToRemotePath (localFilePath, remoteFolderPath, remoteFileName) {
     this.filePath = localFilePath
     this.folderPath = remoteFolderPath
-    return 'remote/file.name'
+    this.remoteFileName = remoteFileName
+    return `remote/${remoteFileName || localFilePath}`
   } // copyFileToRemotePath
 
   copyFileToLocalPath (remoteFilePath, localFolderPath) {
@@ -63,9 +64,17 @@ describe('Provider registered, so all method calls forward to provider', functio
   })
   it('copyFileToRemotePath', async () => {
     const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote')
-    expect(provider.folderPath).to.eql('remote')
     expect(provider.filePath).to.eql('local.file')
-    expect(remoteName).to.eql('remote/file.name')
+    expect(provider.folderPath).to.eql('remote')
+    expect(provider.remoteFileName).to.eql(null)
+    expect(remoteName).to.eql('remote/local.file')
+  })
+  it('copyFileToRemotePath with filename', async () => {
+    const remoteName = await cloudstorageService.copyFileToRemotePath('local.file', 'remote', 'new.name')
+    expect(provider.filePath).to.eql('local.file')
+    expect(provider.folderPath).to.eql('remote')
+    expect(provider.remoteFileName).to.eql('new.name')
+    expect(remoteName).to.eql('remote/new.name')
   })
   it('copyFileToLocalPath', async () => {
     const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
