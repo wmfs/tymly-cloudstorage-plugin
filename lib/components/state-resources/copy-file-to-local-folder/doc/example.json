@@ -1,0 +1,11 @@
+{
+  "CopyToCloudStorage": {
+    "Type": "Task",
+    "Resource": "module:copyFileToLocalFolder",
+    "Parameters": {
+      "localFolderPath.$": "$.localDir",
+      "remoteFilePath.$": "$.serverFilePath"
+    },
+    "End": true
+  }
+}
