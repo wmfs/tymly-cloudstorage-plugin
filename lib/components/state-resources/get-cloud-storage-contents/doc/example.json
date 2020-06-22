@@ -1,0 +1,11 @@
+{
+  "GetCloudStorageContents": {
+    "Type": "Task",
+    "Resource": "module:getCloudStorageContents",
+    "ResourceConfig": {
+      "folderPath": "Shared Documents/General/uploads/ridge_uploads/${boardKeys.uprn}"
+    },
+    "ResultPath": "$.sharepoint",
+    "Next": "CreateSearchInput"
+  }
+}

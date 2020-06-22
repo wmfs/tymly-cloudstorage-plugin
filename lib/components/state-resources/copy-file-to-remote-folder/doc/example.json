@@ -1,0 +1,13 @@
+{
+  "CopyToCloudStorage": {
+    "Type": "Task",
+    "Resource": "module:copyFileToRemoteFolder",
+    "Parameters": {
+      "localFilePath.$": "$.body.upload.serverFilename"
+    },
+    "ResourceConfig": {
+      "folderPath": "pizza-menu"
+    },
+    "End": true
+  }
+}
