@@ -1,3 +1,25 @@
+# [1.2.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.1.1...v1.2.0) (2020-06-22)
+
+
+### ✨ Features
+
+* **state-resources:** Added CopyFileToRemoteFolder state resource ([88cc4c9](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/88cc4c95b6a646d4b05179b42b039649db128056))
+* **state-resources:** Added ensureCloudStorageFolder state resource ([4f56509](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/4f5650951059f1ee600274c78dd0ccee13679720))
+* **state-resources:** copyFileToLocalFolder state resource ([137d7da](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/137d7daf0b812e4459c13d4bd104e443e17d89d7))
+* **state-resources:** getCloudStorageContents state resource ([50098bb](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/50098bb4269c2bb155834f33ce7101854ab6f666))
+
+
+### 🐛 Bug Fixes
+
+* **service:** Extend copyFileToRemotePath to take optional remote file name parameter ([7f255c1](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/7f255c1ab7d36d0fccff34cb7fd078d6f6a519b9))
+* **state-machines:** Setting on remoteFolderPath as parameter name ([7a7b934](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/7a7b9347be13576e8dfe83fdfbf31f4dedf9a892))
+* **state-resource:** ensureCloudStorageFolder takes input through parameters not resource config ([d63b29b](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/d63b29b8b62713c4d7732f704b236106f85b1d21))
+
+
+### 💎 Styles
+
+* Lint fixes ([5e88eac](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/5e88eac04a3079001b2a1043d4ff51ebd854cf52))
+
 ## [1.1.1](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.1.0...v1.1.1) (2020-05-29)
 
 
