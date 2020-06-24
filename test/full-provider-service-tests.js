@@ -5,29 +5,7 @@ const expect = require('chai').expect
 const tymly = require('@wmfs/tymly')
 const path = require('path')
 
-class TestProvider {
-  ensureFolderPath (path) {
-    this.folderPath = path
-  }
-
-  listFolderContentsFromPath (path) {
-    this.folderPath = path
-    return ['dummy']
-  }
-
-  copyFileToRemotePath (localFilePath, remoteFolderPath, remoteFileName) {
-    this.filePath = localFilePath
-    this.folderPath = remoteFolderPath
-    this.remoteFileName = remoteFileName
-    return `remote/${remoteFileName || localFilePath}`
-  } // copyFileToRemotePath
-
-  copyFileToLocalPath (remoteFilePath, localFolderPath) {
-    this.filePath = remoteFilePath
-    this.folderPath = localFolderPath
-    return 'local/file.name'
-  }
-}
+const TestProvider = require('./test-provider')
 
 describe('Provider registered, so all method calls forward to provider', function () {
   this.timeout(process.env.TIMEOUT || 5000)
@@ -77,9 +55,9 @@ describe('Provider registered, so all method calls forward to provider', functio
     expect(remoteName).to.eql('remote/new.name')
   })
   it('copyFileToLocalPath', async () => {
-    const localName = await cloudstorageService.copyFileToLocalPath('remote.file', 'local')
+    const localName = await cloudstorageService.copyFileToLocalPath('file.name', 'local')
     expect(provider.folderPath).to.eql('local')
-    expect(provider.filePath).to.eql('remote.file')
+    expect(provider.filePath).to.eql('file.name')
     expect(localName).to.eql('local/file.name')
   })
 
