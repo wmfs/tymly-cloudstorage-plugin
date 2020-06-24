@@ -71,4 +71,3 @@ describe('Provider registration', function () {
     await tymlyService.shutdown()
   })
 })
-
