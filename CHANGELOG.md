@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.2.0...v1.3.0) (2020-06-26)
+
+
+### ✨ Features
+
+* **service:** Support multiple providers ([3c59f0a](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/3c59f0a0f59393d5ac128d9c69b1789e6cefe84a))
+* **state-resources:** Added remoteFolderRoot resource config item ([b089e54](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/b089e54ce536f43fc29afb11b3bc2af7c1e7b027))
+* **state-resources:** Configured provider can be override with parameter. ([3e59931](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/3e599316ac5147da85722df849c7065c21ff8afa))
+* **state-resources:** State resources can be configured to use a specific storage provider ([fac846a](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/fac846acc0948e958fec638331f796c49b6223ee))
+
+
+### 🚨 Tests
+
+* Corrected tests ([12666c5](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/12666c5e10db9d2d64fa1a2b921c64e33dd35765))
+
 # [1.2.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.1.1...v1.2.0) (2020-06-22)
 
 
