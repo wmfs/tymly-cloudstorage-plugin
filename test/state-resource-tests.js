@@ -46,15 +46,16 @@ describe('State Resource Tests', function () {
     return p
   }
   const providers = [
-    ['default', {}, defaultProvider, identity],
-    ['named', { provider: 'chosen' }, namedProvider, identity],
-    ['unknown so revert to default', { provider: 'unknown' }, defaultProvider, identity],
-    ['default but parameter overrides', {}, parameterProvider, parameterOverride],
-    ['named but parameter overrides', { provider: 'chosen' }, parameterProvider, parameterOverride]
+    ['default provider', {}, defaultProvider, identity],
+    ['named provider', { provider: 'chosen' }, namedProvider, identity],
+    ['unknown so revert to default provider', { provider: 'unknown' }, defaultProvider, identity],
+    ['default but parameter overrides provider', {}, parameterProvider, parameterOverride],
+    ['named but parameter overrides provider', { provider: 'chosen' }, parameterProvider, parameterOverride],
+    ['remote root', { remoteFolderRoot: '/config/' }, defaultProvider, identity, '/config/']
   ]
 
-  for (const [t, config, provider, event] of providers) {
-    describe(`Configured with ${t} provider`, () => {
+  for (const [t, config, provider, event, root = ''] of providers) {
+    describe(`Configured with ${t}`, () => {
       const context = {
         sendTaskSuccess: result => {
           context.result = result
@@ -71,7 +72,7 @@ describe('State Resource Tests', function () {
           event({ remoteFolderPath: 'remote/path1' }),
           context
         )
-        expect(provider.folderPath).to.eql('remote/path1')
+        expect(provider.folderPath).to.eql(`${root}remote/path1`)
       })
 
       it('listFolderContentsFromPath', async () => {
@@ -82,7 +83,7 @@ describe('State Resource Tests', function () {
           context
         )
 
-        expect(provider.folderPath).to.eql('remote/path2')
+        expect(provider.folderPath).to.eql(`${root}remote/path2`)
         expect(context.result).to.eql(['dummy'])
       })
 
@@ -98,9 +99,9 @@ describe('State Resource Tests', function () {
         )
 
         expect(provider.filePath).to.eql('local.file')
-        expect(provider.folderPath).to.eql('remote')
+        expect(provider.folderPath).to.eql(`${root}remote`)
         expect(provider.remoteFileName).to.eql(null)
-        expect(context.result).to.eql('remote/local.file')
+        expect(context.result).to.eql(`${root}remote/local.file`)
       })
 
       it('copyFileToRemotePath with filename', async () => {
@@ -116,9 +117,9 @@ describe('State Resource Tests', function () {
         )
 
         expect(provider.filePath).to.eql('local.file')
-        expect(provider.folderPath).to.eql('remote')
+        expect(provider.folderPath).to.eql(`${root}remote`)
         expect(provider.remoteFileName).to.eql('new.name')
-        expect(context.result).to.eql('remote/new.name')
+        expect(context.result).to.eql(`${root}remote/new.name`)
       })
 
       it('copyFileToLocalPath', async () => {
@@ -133,7 +134,7 @@ describe('State Resource Tests', function () {
         )
 
         expect(provider.folderPath).to.eql('local')
-        expect(provider.filePath).to.eql('file.name')
+        expect(provider.filePath).to.eql(`${root}file.name`)
         expect(context.result).to.eql('local/file.name')
       })
     })
