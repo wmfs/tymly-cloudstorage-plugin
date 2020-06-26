@@ -1,4 +1,4 @@
 This document specifies a JSON object called a "RemoteCopy".
 A RemoteCopy MAY have a string field named "localFilePath".
-A RemoteCopy MAY have a string field named "remoteFolderPath".
 A RemoteCopy MAY have a string field named "remoteFileName".
+A RemoteCopy MAY have a string field named "provider".

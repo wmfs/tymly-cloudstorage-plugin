@@ -1,2 +1,3 @@
 This document specifies a JSON object called a "RemoteFolder".
 A RemoteFolder MAY have a string field named "remoteFolderPath".
+A RemoteFolder MAY have a string field named "provider".
