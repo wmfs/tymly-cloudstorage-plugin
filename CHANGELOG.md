@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.3.0...v1.4.0) (2020-10-09)
+
+
+### 🛠 Builds
+
+* **deps:** Update dependencies ([b94c7af](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/b94c7affffb0a0de03a6bf7c574b7f66275cdd47))
+* **deps-dev:** bump codecov from 3.7.0 to 3.7.2 ([cca94f0](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/cca94f065ef18b7cc2936a031559efc02d5db941))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** use updated circle node image [skip ci] ([63baa68](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/63baa6878dd0e9fd73911e3ab2d1d768aebb877d))
+
 # [1.3.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.2.0...v1.3.0) (2020-06-26)
 
 
