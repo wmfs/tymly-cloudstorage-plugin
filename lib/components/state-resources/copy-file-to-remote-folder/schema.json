@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "localFilePath": {
+      "type": "string"
+    },
+    "remoteFolderPath": {
+      "type": "string"
+    },
+    "remoteFileName": {
+      "type": "string"
+    }
+  }
+}
