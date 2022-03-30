@@ -1,0 +1,11 @@
+{
+  "Deleting": {
+    "Type": "Task",
+    "Resource": "module:deletingCloudStorageFile",
+    "ResourceConfig": {
+      "provider": "sharepoint",
+      "folderPath": "Shared Documents/General/uploads/${keys.uprn}"
+    },
+    "Next": "GetSharepointContents"
+  }
+}

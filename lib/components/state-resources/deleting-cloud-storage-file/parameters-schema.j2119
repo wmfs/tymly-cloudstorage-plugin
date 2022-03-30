@@ -1,0 +1,3 @@
+This document specifies a JSON object called a "RemoteDelete".
+A RemoteDelete MAY have a string field named "remoteFolderPath".
+A RemoteDelete MAY have a string field named "remoteFileName".
