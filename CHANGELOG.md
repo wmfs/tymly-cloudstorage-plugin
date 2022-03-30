@@ -1,3 +1,25 @@
+# [1.6.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.5.0...v1.6.0) (2022-03-30)
+
+
+### ✨ Features
+
+* state resource and service function to support deleting remote files ([382014a](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/382014a14344a03613df31d3266db379f0026665))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update dependency [@wmfs](https://github.com/wmfs)/tymly to v1.228.0 ([0546844](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/0546844dcb0efd3b69deb2e9213c3f2e8ec5bb19))
+* **deps-dev:** update dependency [@wmfs](https://github.com/wmfs)/tymly to v1.234.0 ([8f744f4](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/8f744f45e057a87492a438af13806fdd282359ee))
+* **deps-dev:** update dependency [@wmfs](https://github.com/wmfs)/tymly to v1.235.0 ([7e7e86b](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/7e7e86b2e85f36e3a429b09a45a63afa51ef34cd))
+* **deps-dev:** update dependency [@wmfs](https://github.com/wmfs)/tymly to v1.235.1 ([6199a06](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/6199a06b4eade0da34b3b191482c73bacdcbb7af))
+* **deps-dev:** update dependency chai to v4.3.5 ([fbaa0c2](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/fbaa0c23ef8a67c55dd39091d68cdda8cda547c8))
+* **deps-dev:** update dependency chai to v4.3.6 ([0f77a2c](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/0f77a2c99ebdde3a5087e4bf1e73b267c6f0624d))
+* **deps-dev:** update dependency mocha to v9.1.4 ([8b68262](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/8b68262755f380c9c510bd07942bf8f167c19528))
+* **deps-dev:** update dependency mocha to v9.2.0 ([ce0fc9e](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/ce0fc9e7355b9859b578fb1208712834ff22ceeb))
+* **deps-dev:** update dependency mocha to v9.2.1 ([48a7dcd](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/48a7dcdc2a8f71e04ae02dfa156dfaa78cb08434))
+* **deps-dev:** update dependency mocha to v9.2.2 ([77c1025](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/77c1025e8424fde0e06be5ae755dcce6e4b5f087))
+* **deps-dev:** update dependency semantic-release to v19 ([3920813](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/39208135561f2e6658454a9af08a61925dd5f30e))
+
 # [1.5.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.4.0...v1.5.0) (2022-01-07)
 
 
