@@ -7,7 +7,7 @@
     },
     "remoteFolderRoot": {
       "type": "string",
-      "dscription": "The path of the folder you wish to create, assuming that it doesn't already exist.  Note that if you specify a 'remoteFolderPath' parameter, it's value will be appended to the end of the remoteFolderRoot value and the result will be treated as the path."
+      "dscription": "The path of the folder you wish to create, assuming that it doesn't already exist.  Note that if you specify the (optional) 'remoteFolderPath' parameter, it's value will be appended to the end of the remoteFolderRoot value and the result will be treated as the path."
     }
   }
 }
