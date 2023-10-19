@@ -3,9 +3,21 @@
     "Type": "Task",
     "Resource": "module:ensureCloudStorageFolder",
     "ResourceConfig": {
-      "folderPath": "Shared Documents/General/uploads/ridge_uploads/${boardKeys.uprn}"
+      "provider": "provider",
+      "remoteFolderRoot": "Shared Documents"
+    },
+    "Parameters": {
+      "remoteFolderPath": "1234567890/Audit/Photos"
     },
     "ResultPath": "$.sharepointMeta",
-    "Next": "GetSharepointContents"
+    "Next": "GetSharepointContents",
+    "Catch": [
+      {
+        "ErrorEquals": [
+          "States.ALL"
+        ],
+        "End": true
+      }
+    ]
   }
 }
