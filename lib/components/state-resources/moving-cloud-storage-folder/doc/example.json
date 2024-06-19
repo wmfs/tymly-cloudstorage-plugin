@@ -1,7 +1,7 @@
 {
   "Moving": {
     "Type": "Task",
-    "Resource": "module:movingCloudStorageFolder",
+    "Resource": "module:movingCloudStorageFolderContents",
     "ResourceConfig": {
       "provider": "sharepoint",
       "folderPath": "Shared Documents/General/uploads"
