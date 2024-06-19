@@ -1,0 +1,3 @@
+This document specifies a JSON object called a "RemoteMove".
+A RemoteDelete MAY have a string field named "provider".
+A RemoteDelete MAY have a string field named "remoteFolderRoot".
