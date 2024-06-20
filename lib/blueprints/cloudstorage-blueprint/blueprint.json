@@ -1,0 +1,12 @@
+{
+  "namespace": "cloudstorage",
+  "name": "cloud-storage",
+  "version": "1.0",
+  "label": "Cloud Storage Blueprint",
+  "author": "WMFS",
+  "organisation": "WMFS",
+  "description": "Blueprint to provide UI tools to cloud storage documents",
+  "categories": [
+    "tymly"
+  ]
+}

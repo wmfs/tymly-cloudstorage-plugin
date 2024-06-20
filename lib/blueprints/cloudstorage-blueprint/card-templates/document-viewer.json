@@ -1,0 +1,64 @@
+{
+  "templateMeta": {
+    "name": "document-viewer",
+    "title": "${templateTitle}",
+    "category": "tymly"
+  },
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "color": "accent",
+      "spacing": "none",
+      "items": [
+        {
+          "type": "TextBlock",
+          "weight": "bolder",
+          "size": "medium",
+          "spacing": "none",
+          "text": "{{ data.templateTitle }}"
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "none",
+          "text": "{{ data.remoteFolderPath }}"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "spacing": "none",
+      "items": [
+        {
+          "showWhen": "!data.contents.length",
+          "type": "TextBlock",
+          "text": "There are no documents in this folder"
+        },
+        {
+          "clickToLaunch": true,
+          "showWhen": "data.contents.length",
+          "type": "List",
+          "arrayPath": "data.contents",
+          "avatar": {
+            "type": "icon",
+            "sourcePath": "item.icon"
+          },
+          "templates": {
+            "label": "{{ item.Name }}",
+            "sublabel": [
+              "Last modified at {{ formatDate(item.TimeLastModified, 'DD MMM YYYY HH:mm') }}"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Back"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/wmfs/cardscript-schema/master/lib/schema.json",
+  "version": "1.0"
+}

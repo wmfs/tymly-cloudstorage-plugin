@@ -1,0 +1,47 @@
+{
+  "Comment": "Cloud Storage Document Viewer",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "GetContents",
+  "States": {
+    "GetContents": {
+      "Type": "Task",
+      "Resource": "module:getCloudStorageContents",
+      "Parameters": {
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath"
+      },
+      "ResultPath": "$.contents",
+      "Next": "ApplyLaunches"
+    },
+    "ApplyLaunches": {
+      "Type": "Task",
+      "Parameters": {
+        "templateTitle.$": "$.templateTitle",
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath",
+        "contents.$": "$.contents"
+      },
+      "Resource": "function:cloudstorage_applyLaunchesToContents",
+      "ResultPath": "$.contents",
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiName": "cloudstorage_documentViewer",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
