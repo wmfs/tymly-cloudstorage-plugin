@@ -30,18 +30,34 @@
       "spacing": "none",
       "items": [
         {
-          "showWhen": "!data.contents.length",
+          "showWhen": "!data.folders.length && !data.files.length",
           "type": "TextBlock",
           "text": "There are no documents in this folder"
         },
         {
           "clickToLaunch": true,
-          "showWhen": "data.contents.length",
+          "showWhen": "data.folders.length",
           "type": "List",
-          "arrayPath": "data.contents",
+          "arrayPath": "data.folders",
           "avatar": {
             "type": "icon",
-            "sourcePath": "item.icon"
+            "source": "folder"
+          },
+          "templates": {
+            "label": "{{ item.Name }}",
+            "sublabel": [
+              "Last modified at {{ formatDate(item.TimeLastModified, 'DD MMM YYYY HH:mm') }}"
+            ]
+          }
+        },
+        {
+          "showLaunches": true,
+          "showWhen": "data.files.length",
+          "type": "List",
+          "arrayPath": "data.files",
+          "avatar": {
+            "type": "icon",
+            "source": "description"
           },
           "templates": {
             "label": "{{ item.Name }}",

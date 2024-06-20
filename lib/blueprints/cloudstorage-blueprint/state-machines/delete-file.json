@@ -1,0 +1,26 @@
+{
+  "Comment": "Cloud Storage Delete File",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "Deleting",
+  "States": {
+    "Deleting": {
+      "Type": "Task",
+      "Resource": "module:deletingCloudStorageFile",
+      "Parameters": {
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath",
+        "remoteFileName.$": "$.remoteFileName"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}

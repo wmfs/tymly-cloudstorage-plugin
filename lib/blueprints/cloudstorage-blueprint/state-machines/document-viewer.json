@@ -12,9 +12,9 @@
         "remoteFolderPath.$": "$.remoteFolderPath"
       },
       "ResultPath": "$.contents",
-      "Next": "ApplyLaunches"
+      "Next": "ShapeDocuments"
     },
-    "ApplyLaunches": {
+    "ShapeDocuments": {
       "Type": "Task",
       "Parameters": {
         "templateTitle.$": "$.templateTitle",
@@ -22,8 +22,11 @@
         "remoteFolderPath.$": "$.remoteFolderPath",
         "contents.$": "$.contents"
       },
-      "Resource": "function:cloudstorage_applyLaunchesToContents",
-      "ResultPath": "$.contents",
+      "Resource": "function:cloudstorage_shapeDocuments",
+      "ResultSelector": {
+        "folders.$": "$.folders",
+        "files.$": "$.files"
+      },
       "Next": "AwaitingHumanInput"
     },
     "AwaitingHumanInput": {
