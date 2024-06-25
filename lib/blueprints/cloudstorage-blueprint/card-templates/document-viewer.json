@@ -67,6 +67,25 @@
           }
         }
       ]
+    },
+    {
+      "showWhen": "data.isError === true",
+      "type": "Container",
+      "color": "attention",
+      "spacing": "none",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "There was an error",
+          "weight": "bolder",
+          "spacing": "none"
+        },
+        {
+          "type": "TextBlock",
+          "text": "{{ data.errorMessage }}",
+          "spacing": "none"
+        }
+      ]
     }
   ],
   "actions": [

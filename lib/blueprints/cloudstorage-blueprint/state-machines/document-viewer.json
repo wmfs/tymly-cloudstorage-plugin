@@ -12,7 +12,25 @@
         "remoteFolderPath.$": "$.remoteFolderPath"
       },
       "ResultPath": "$.contents",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "FailedToGetDocuments"
+        }
+      ],
       "Next": "ShapeDocuments"
+    },
+    "FailedToGetDocuments": {
+      "Type": "Pass",
+      "Result": {
+        "isError": true,
+        "errorMessage": "Could not get contents",
+        "folders": [],
+        "files": []
+      },
+      "Next": "AwaitingHumanInput"
     },
     "ShapeDocuments": {
       "Type": "Task",
