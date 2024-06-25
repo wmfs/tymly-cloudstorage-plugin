@@ -5,7 +5,7 @@
   "label": "Cloud Storage Blueprint",
   "author": "WMFS",
   "organisation": "WMFS",
-  "description": "Blueprint to provide UI tools to cloud storage documents",
+  "description": "Blueprint to provide UI tools to cloud storage contents",
   "categories": [
     "tymly"
   ]

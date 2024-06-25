@@ -1,6 +1,6 @@
 {
   "templateMeta": {
-    "name": "document-viewer",
+    "name": "view-folder",
     "title": "${templateTitle}",
     "category": "tymly"
   },
@@ -32,7 +32,7 @@
         {
           "showWhen": "!data.folders.length && !data.files.length",
           "type": "TextBlock",
-          "text": "There are no documents in this folder"
+          "text": "There are no contents in this folder"
         },
         {
           "clickToLaunch": true,
@@ -67,6 +67,33 @@
           }
         }
       ]
+    },
+    {
+      "showWhen": "data.uploadAllowed === true",
+      "id": "fileUpload",
+      "type": "Input.FileUpload",
+      "onUploadEndpoint": {
+        "name": "cloudstorage_uploadFile_1_0"
+      },
+      "autoUpload": true,
+      "additionalFields": {
+        "provider": "${data.provider}",
+        "remoteFolderPath": "${data.remoteFolderPath}",
+        "templateTitle": "${data.templateTitle}"
+      },
+      "accept": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".pdf",
+        ".mov",
+        ".mp4",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx"
+      ],
+      "maxFileSizeBytes": 2147483648
     },
     {
       "showWhen": "data.isError === true",

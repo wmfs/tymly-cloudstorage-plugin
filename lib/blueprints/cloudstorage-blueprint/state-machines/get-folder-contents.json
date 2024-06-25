@@ -1,5 +1,5 @@
 {
-  "Comment": "Cloud Storage Document Viewer",
+  "Comment": "Cloud Storage Get Folder Contents",
   "Version": "1.0",
   "version": "1.0",
   "StartAt": "GetContents",
@@ -17,12 +17,12 @@
           "ErrorEquals": [
             "States.ALL"
           ],
-          "Next": "FailedToGetDocuments"
+          "Next": "FailedToGetContents"
         }
       ],
-      "Next": "ShapeDocuments"
+      "Next": "ShapeContents"
     },
-    "FailedToGetDocuments": {
+    "FailedToGetContents": {
       "Type": "Pass",
       "Result": {
         "isError": true,
@@ -32,27 +32,19 @@
       },
       "Next": "AwaitingHumanInput"
     },
-    "ShapeDocuments": {
+    "ShapeContents": {
       "Type": "Task",
       "Parameters": {
         "templateTitle.$": "$.templateTitle",
         "provider.$": "$.provider",
         "remoteFolderPath.$": "$.remoteFolderPath",
-        "contents.$": "$.contents"
+        "contents.$": "$.contents",
+        "uploadAllowed.$": "$.uploadAllowed"
       },
-      "Resource": "function:cloudstorage_shapeDocuments",
+      "Resource": "function:cloudstorage_shapeContents",
       "ResultSelector": {
         "folders.$": "$.folders",
         "files.$": "$.files"
-      },
-      "Next": "AwaitingHumanInput"
-    },
-    "AwaitingHumanInput": {
-      "Type": "Task",
-      "Resource": "module:awaitingHumanInput",
-      "ResourceConfig": {
-        "uiName": "cloudstorage_documentViewer",
-        "dataPath": "$"
       },
       "End": true
     }
