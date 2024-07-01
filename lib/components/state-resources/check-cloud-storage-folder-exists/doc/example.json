@@ -1,0 +1,23 @@
+{
+  "CheckCloudStorageFolderExists": {
+    "Type": "Task",
+    "Resource": "module:checkCloudStorageFolderExists",
+    "ResourceConfig": {
+      "provider": "provider",
+      "remoteFolderRoot": "Shared Documents"
+    },
+    "Parameters": {
+      "remoteFolderPath": "1234567890/Audit/Photos"
+    },
+    "ResultPath": "$.sharepointMeta",
+    "Next": "GetSharepointContents",
+    "Catch": [
+      {
+        "ErrorEquals": [
+          "States.ALL"
+        ],
+        "End": true
+      }
+    ]
+  }
+}
