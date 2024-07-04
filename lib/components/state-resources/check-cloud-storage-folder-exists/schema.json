@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "string",
+      "description": "The id of a plugin that interacts with a Document Management System.  For example 'sharepoint', 'alfresco' etc."
+    },
+    "remoteFolderRoot": {
+      "type": "string",
+      "dscription": "The path of the folder you wish to check exists.  Note that if you specify the (optional) 'remoteFolderPath' parameter, it's value will be appended to the end of the remoteFolderRoot value and the result will be treated as the path."
+    }
+  }
+}
