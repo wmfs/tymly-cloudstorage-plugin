@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.7.0...v1.8.0) (2024-07-04)
+
+
+### Features
+
+* **(pin 262) crr dd:** [sc-25086] Remove manage in SharePoint unless a file uploaded ([#219](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/219)) ([cb27bf1](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/cb27bf1bb694592650fd2cddac12ece99e3087db))
+
 # [1.7.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.6.0...v1.7.0) (2023-09-19)
 
 
