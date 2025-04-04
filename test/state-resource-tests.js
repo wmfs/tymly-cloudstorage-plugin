@@ -62,6 +62,9 @@ describe('State Resource Tests', function () {
         },
         sendTaskFailure: err => {
           throw err
+        },
+        stateMachineMeta: {
+          name: 'test'
         }
       }
 
