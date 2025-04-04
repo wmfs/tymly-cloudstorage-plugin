@@ -17,7 +17,7 @@ const TestProvider = require('./test-provider')
 describe('State Resource Tests', function () {
   this.timeout(process.env.TIMEOUT || 5000)
 
-  let tymlyService, env
+  let tymlyService, storage, env
 
   const defaultProvider = new TestProvider()
   const namedProvider = new TestProvider()
@@ -33,6 +33,7 @@ describe('State Resource Tests', function () {
     )
 
     tymlyService = services.tymly
+    storage = services.storage
     env = { bootedServices: services }
 
     services.cloudstorage.registerProvider(defaultProvider)
@@ -62,6 +63,9 @@ describe('State Resource Tests', function () {
         },
         sendTaskFailure: err => {
           throw err
+        },
+        stateMachineMeta: {
+          name: 'test'
         }
       }
 
@@ -139,6 +143,26 @@ describe('State Resource Tests', function () {
       })
     })
   } // for ...
+
+  describe('Upload meta', () => {
+    it('check upload meta', async () => {
+      const data = await storage.models.cloudstorage_uploadMeta.find({})
+
+      expect(data.length).to.eql(12)
+
+      expect(data[0].remoteFolderPath).to.eql('remote')
+      expect(data[0].remoteFolderRoot).to.eql('')
+      expect(data[0].localFilePath).to.eql('local.file')
+      expect(data[0].remoteFileName).to.eql(undefined)
+      expect(data[0].provider).to.eql('default')
+
+      expect(data[data.length - 1].remoteFolderPath).to.eql('remote')
+      expect(data[data.length - 1].remoteFolderRoot).to.eql('/config/')
+      expect(data[data.length - 1].localFilePath).to.eql('local.file')
+      expect(data[data.length - 1].remoteFileName).to.eql('new.name')
+      expect(data[data.length - 1].provider).to.eql('default')
+    })
+  })
 
   after('shut down Tymly', async () => {
     await tymlyService.shutdown()
