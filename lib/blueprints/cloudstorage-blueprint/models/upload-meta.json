@@ -1,0 +1,33 @@
+{
+  "description": "Cloud Storage Upload Meta",
+  "type": "object",
+  "properties": {
+    "stateMachineName": {
+      "type": "string"
+    },
+    "executionName": {
+      "type": "string"
+    },
+    "remoteFolderPath": {
+      "type": "string"
+    },
+    "remoteFolderRoot": {
+      "type": "string"
+    },
+    "localFilePath": {
+      "type": "string"
+    },
+    "remoteFileName": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "fileSize": {
+      "type": "integer"
+    },
+    "errorMessage": {
+      "type": "string"
+    }
+  }
+}
