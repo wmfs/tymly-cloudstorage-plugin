@@ -1,3 +1,64 @@
+## [1.9.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.8.0...v1.9.0) (2025-04-23)
+
+### New Feature(s) :rocket:
+
+* [sc-30319] Capture Tymly upload metadata ([#270](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/270)) ([50050e1](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/50050e16112899cf4124307ad11c8cf2ada8cb49))
+
+### Build system dependencies :hammer:
+
+* **deps-dev:** [sc-29160] Resolve issue with semantic-release changelog notes ([#249](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/249)) ([8d81136](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/8d8113638d823888bbb2d3256c3cf83d74ce8e32))
+* **deps-dev:** update dependency @semantic-release/exec to v7 ([#255](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/255)) ([0bdf094](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/0bdf094363bcff1302c3172f15dc08b41737a45a))
+* **deps-dev:** update dependency @semantic-release/exec to v7.0.2 ([#256](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/256)) ([e31c09b](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/e31c09bf49f148751d9b12fbd292099d42563177))
+* **deps-dev:** update dependency @semantic-release/exec to v7.0.3 ([#257](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/257)) ([9027bc4](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/9027bc4fc9cbf235a3e74c1601f2c346db2e868c))
+* **deps-dev:** update dependency @wmfs/tymly to v1.277.0 ([#237](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/237)) ([db15938](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/db15938b59bc27e95b17f5f6c73b1fcf46323113))
+* **deps-dev:** update dependency @wmfs/tymly to v1.278.0 ([#238](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/238)) ([305d632](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/305d632343df23e8ef48219066b345b741538a7a))
+* **deps-dev:** update dependency @wmfs/tymly to v1.279.0 ([#239](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/239)) ([ca06298](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/ca062986f76aca8e4756f22c099bc97f094e59ae))
+* **deps-dev:** update dependency @wmfs/tymly to v1.280.0 ([#240](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/240)) ([0f0ee6c](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/0f0ee6c2c037cd0a0b87bf1924774d4c56c41725))
+* **deps-dev:** update dependency @wmfs/tymly to v1.282.0 ([#241](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/241)) ([09e4451](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/09e445146fad5f42bfe27626661abd1eb7151777))
+* **deps-dev:** update dependency @wmfs/tymly to v1.283.0 ([#242](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/242)) ([a9a1711](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/a9a1711871dfd0857df146c08208d3f2e4b1d6f8))
+* **deps-dev:** update dependency @wmfs/tymly to v1.284.0 ([#243](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/243)) ([3b2e53a](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/3b2e53a467d049598d19a1563beea3a32b724262))
+* **deps-dev:** update dependency @wmfs/tymly to v1.285.0 ([#245](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/245)) ([f29a197](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/f29a19750bff9258ee3bd5a080b157a15c234884))
+* **deps-dev:** update dependency @wmfs/tymly to v1.286.0 ([#246](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/246)) ([35712a9](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/35712a91e972c74d72c3f222acfd18cb5e1b5f98))
+* **deps-dev:** update dependency @wmfs/tymly to v1.287.0 ([#248](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/248)) ([c216318](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/c216318b4d7c462ad0deb9fd41ef5032813b3b82))
+* **deps-dev:** update dependency @wmfs/tymly to v1.288.0 ([#250](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/250)) ([9a139a7](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/9a139a7aed278ed0199102bb0266b0684a3ba64a))
+* **deps-dev:** update dependency @wmfs/tymly to v1.289.0 ([#251](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/251)) ([1b12d28](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/1b12d284cfa96a2b6242c33984ea4e41e277f031))
+* **deps-dev:** update dependency @wmfs/tymly to v1.291.0 ([#252](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/252)) ([a906fc2](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/a906fc25cd35d26d7c4ae624b448b5c5cc7e4c3f))
+* **deps-dev:** update dependency @wmfs/tymly to v1.292.0 ([#253](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/253)) ([a1ebdb3](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/a1ebdb350672edd473c317b7480755ba0e7f3fd9))
+* **deps-dev:** update dependency @wmfs/tymly to v1.294.0 ([#260](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/260)) ([f78abfc](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/f78abfcf77e5bf7b6ebb533e40f752e61adcbde1))
+* **deps-dev:** update dependency @wmfs/tymly to v1.295.0 ([#261](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/261)) ([a8da375](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/a8da3759087cd718a5ab47c78114d1a87e8dd9aa))
+* **deps-dev:** update dependency @wmfs/tymly to v1.296.0 ([#262](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/262)) ([ae16494](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/ae164946c1e77e94ad30a67714a0ee46b306376a))
+* **deps-dev:** update dependency @wmfs/tymly to v1.297.0 ([#263](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/263)) ([8da8fc6](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/8da8fc68a8f3b3f6ae4bae57853e24f1f1c599e1))
+* **deps-dev:** update dependency @wmfs/tymly to v1.298.0 ([#264](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/264)) ([25f4178](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/25f41785fd7fb23e6d3ae1b23c634ff9d0bf1c2c))
+* **deps-dev:** update dependency @wmfs/tymly to v1.299.0 ([#265](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/265)) ([44a943c](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/44a943c31c848185f9c0884ae38a4d3533e98b17))
+* **deps-dev:** update dependency @wmfs/tymly to v1.300.0 ([#266](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/266)) ([c590542](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/c5905424bfdca132786548b73c190f74b9a08a0e))
+* **deps-dev:** update dependency @wmfs/tymly to v1.303.0 ([#267](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/267)) ([4276f3e](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/4276f3e3592800d569c092861a23c7b3669a28d6))
+* **deps-dev:** update dependency @wmfs/tymly to v1.305.0 ([#268](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/268)) ([f3999c0](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/f3999c0b2a49b831c71c20501a569dce91342763))
+* **deps-dev:** update dependency @wmfs/tymly to v1.307.0 ([#269](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/269)) ([4906589](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/49065899e0dd56952689055a40c4cbe04b56b626))
+* **deps-dev:** update dependency chai to v4.5.0 ([95db583](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/95db58330b99566cf051531a28ffaef35d698efb))
+* **deps-dev:** update dependency mocha to v10.7.0 ([47d0d92](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/47d0d92e8a7e1ffba2147536766693ce09953982))
+* **deps-dev:** update dependency mocha to v10.7.3 ([3f10844](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/3f10844d3ad6e3de764621ec1b8e9571f5e9cd54))
+* **deps-dev:** update dependency mocha to v10.8.2 ([159a06a](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/159a06aa0bd61eb98da750482a4d9e5a750d518d))
+* **deps-dev:** update dependency mocha to v11 ([#244](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/244)) ([df30b57](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/df30b57f4409ed99a907cf133b5e19f193e53a40))
+* **deps-dev:** update dependency mocha to v11.1.0 ([#254](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/254)) ([22e99e3](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/22e99e395158d2cd8c7aab462877cceb653a2f7b))
+* **deps-dev:** update dependency nyc to v17.1.0 ([56996cd](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/56996cd61b38af1f4ce27a0ff3704ec84380832b))
+* **deps-dev:** update dependency semantic-release to v24.1.0 ([4611207](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/4611207e26770158ebb9ed72f5211e72863ea4ef))
+* **deps-dev:** update dependency semantic-release to v24.1.1 ([a67ad43](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/a67ad4312fc975bac3dda715edd8b850987f63de))
+* **deps-dev:** update dependency semantic-release to v24.1.2 ([289403b](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/289403bf59a176098ef2f65e17f588bd4e63cf67))
+* **deps-dev:** update dependency semantic-release to v24.1.3 ([784b2a9](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/784b2a925e95d9c69ab0d7ccae594c1d3f842036))
+* **deps-dev:** update dependency semantic-release to v24.2.0 ([7e9a75c](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/7e9a75c0ec37042b163a27f25407bc633571fb6e))
+* **deps-dev:** update dependency semantic-release to v24.2.1 ([#247](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/247)) ([f687eba](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/f687eba8319ae82db8f3cd39a3f1ab8ce35c8a46))
+* **deps-dev:** update dependency semantic-release to v24.2.2 ([#258](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/258)) ([734fe87](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/734fe8765ffc1981f4b8672d85e4a8aaadfde02a))
+* **deps-dev:** update dependency semantic-release to v24.2.3 ([#259](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/259)) ([52e89bf](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/52e89bf848bff4ac6254568b92d606985a340e91))
+* **deps-dev:** update dependency standard to v17.1.1 ([d438b3f](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/d438b3f5f6b0973f3ec2d333553319e13acbc217))
+* **deps-dev:** update dependency standard to v17.1.2 ([aed00dd](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/aed00dd186a7df861f15cb5b0352cc82f12f140b))
+
+# [1.8.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.7.0...v1.8.0) (2024-07-04)
+
+
+### Features
+
+* **(pin 262) crr dd:** [sc-25086] Remove manage in SharePoint unless a file uploaded ([#219](https://github.com/wmfs/tymly-cloudstorage-plugin/issues/219)) ([cb27bf1](https://github.com/wmfs/tymly-cloudstorage-plugin/commit/cb27bf1bb694592650fd2cddac12ece99e3087db))
+
 # [1.7.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.6.0...v1.7.0) (2023-09-19)
 
 
