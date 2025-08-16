@@ -1,0 +1,60 @@
+{
+  "Comment": "Cloud Storage Get Folder Contents",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "GetContents",
+  "States": {
+    "GetContents": {
+      "Type": "Task",
+      "Resource": "module:getCloudStorageContents",
+      "Parameters": {
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath"
+      },
+      "ResultPath": "$.contents",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "FailedToGetContents"
+        }
+      ],
+      "Next": "ShapeContents"
+    },
+    "FailedToGetContents": {
+      "Type": "Pass",
+      "Result": {
+        "isError": true,
+        "errorMessage": "Could not get contents",
+        "folders": [],
+        "files": []
+      },
+      "Next": "AwaitingHumanInput"
+    },
+    "ShapeContents": {
+      "Type": "Task",
+      "Parameters": {
+        "templateTitle.$": "$.templateTitle",
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath",
+        "contents.$": "$.contents",
+        "uploadAllowed.$": "$.uploadAllowed"
+      },
+      "Resource": "function:cloudstorage_shapeContents",
+      "ResultSelector": {
+        "folders.$": "$.folders",
+        "files.$": "$.files"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
