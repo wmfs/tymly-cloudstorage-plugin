@@ -1,0 +1,50 @@
+{
+  "Comment": "Cloud Storage Upload File",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "EnsureFolder",
+  "States": {
+    "EnsureFolder": {
+      "Type": "Task",
+      "Resource": "module:ensureCloudStorageFolder",
+      "Parameters": {
+        "provider.$": "$.body.provider",
+        "remoteFolderPath.$": "$.body.remoteFolderPath"
+      },
+      "Next": "CopyToCloudStorage"
+    },
+    "CopyToCloudStorage": {
+      "Type": "Task",
+      "Parameters": {
+        "provider.$": "$.body.provider",
+        "remoteFolderPath.$": "$.body.remoteFolderPath",
+        "localFilePath.$": "$.body.upload.serverFilename",
+        "remoteFileName.$": "$.body.upload.clientFilename"
+      },
+      "Resource": "module:copyFileToRemoteFolder",
+      "Next": "GetFolderContents"
+    },
+    "GetFolderContents": {
+      "Type": "Task",
+      "Parameters": {
+        "provider.$": "$.body.provider",
+        "remoteFolderPath.$": "$.body.remoteFolderPath",
+        "templateTitle.$": "$.body.templateTitle",
+        "uploadAllowed": true
+      },
+      "Resource": "module:runStateMachine",
+      "ResourceConfig": {
+        "stateMachine": "cloudstorage_getFolderContents_1_0"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}

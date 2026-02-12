@@ -1,0 +1,41 @@
+{
+  "Comment": "Cloud Storage Download File",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "Downloading",
+  "States": {
+    "Downloading": {
+      "Type": "Task",
+      "Resource": "module:downloadingCloudStorageFile",
+      "Parameters": {
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath",
+        "remoteFileName.$": "$.remoteFileName"
+      },
+      "ResultPath": "$",
+      "Next": "DownloadFile"
+    },
+    "DownloadFile": {
+      "Type": "Task",
+      "Resource": "module:runStateMachine",
+      "ResourceConfig": {
+        "stateMachine": "tymly_downloadFile_1_0"
+      },
+      "Parameters": {
+        "localFileDirectory.$": "$.localFolderPath",
+        "localFilePath.$": "$.fileName",
+        "downloadName.$": "$.fileName",
+        "deleteAfterDownload": true
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
