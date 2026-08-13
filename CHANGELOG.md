@@ -1,3 +1,5 @@
+## [1.9.1](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.9.0...v1.9.1) (2026-08-13)
+
 ## [1.9.0](https://github.com/wmfs/tymly-cloudstorage-plugin/compare/v1.8.0...v1.9.0) (2025-04-23)
 
 ### New Feature(s) :rocket:
