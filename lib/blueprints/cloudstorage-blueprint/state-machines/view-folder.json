@@ -1,0 +1,39 @@
+{
+  "Comment": "Cloud Storage View Folder",
+  "Version": "1.0",
+  "version": "1.0",
+  "StartAt": "GetFolderContents",
+  "States": {
+    "GetFolderContents": {
+      "Type": "Task",
+      "Parameters": {
+        "provider.$": "$.provider",
+        "remoteFolderPath.$": "$.remoteFolderPath",
+        "templateTitle.$": "$.templateTitle",
+        "uploadAllowed.$": "$.uploadAllowed"
+      },
+      "Resource": "module:runStateMachine",
+      "ResourceConfig": {
+        "stateMachine": "cloudstorage_getFolderContents_1_0"
+      },
+      "Next": "AwaitingHumanInput"
+    },
+    "AwaitingHumanInput": {
+      "Type": "Task",
+      "Resource": "module:awaitingHumanInput",
+      "ResourceConfig": {
+        "uiName": "cloudstorage_viewFolder",
+        "dataPath": "$"
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
