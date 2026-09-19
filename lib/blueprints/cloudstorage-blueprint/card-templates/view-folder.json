@@ -1,0 +1,126 @@
+{
+  "templateMeta": {
+    "name": "view-folder",
+    "title": "${templateTitle}",
+    "category": "tymly"
+  },
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "color": "accent",
+      "spacing": "none",
+      "items": [
+        {
+          "type": "TextBlock",
+          "weight": "bolder",
+          "size": "medium",
+          "spacing": "none",
+          "text": "{{ data.templateTitle }}"
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "none",
+          "text": "{{ data.remoteFolderPath }}"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "spacing": "none",
+      "items": [
+        {
+          "showWhen": "!data.folders.length && !data.files.length",
+          "type": "TextBlock",
+          "text": "There are no contents in this folder"
+        },
+        {
+          "clickToLaunch": true,
+          "showWhen": "data.folders.length",
+          "type": "List",
+          "arrayPath": "data.folders",
+          "avatar": {
+            "type": "icon",
+            "source": "folder"
+          },
+          "templates": {
+            "label": "{{ item.Name }}",
+            "sublabel": [
+              "Last modified at {{ formatDate(item.TimeLastModified, 'DD MMM YYYY HH:mm') }}"
+            ]
+          }
+        },
+        {
+          "showLaunches": true,
+          "showWhen": "data.files.length",
+          "type": "List",
+          "arrayPath": "data.files",
+          "avatar": {
+            "type": "icon",
+            "source": "description"
+          },
+          "templates": {
+            "label": "{{ item.Name }}",
+            "sublabel": [
+              "Last modified at {{ formatDate(item.TimeLastModified, 'DD MMM YYYY HH:mm') }}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "showWhen": "data.uploadAllowed === true",
+      "id": "fileUpload",
+      "type": "Input.FileUpload",
+      "onUploadEndpoint": {
+        "name": "cloudstorage_uploadFile_1_0"
+      },
+      "autoUpload": true,
+      "additionalFields": {
+        "provider": "${data.provider}",
+        "remoteFolderPath": "${data.remoteFolderPath}",
+        "templateTitle": "${data.templateTitle}"
+      },
+      "accept": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".pdf",
+        ".mov",
+        ".mp4",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx"
+      ],
+      "maxFileSizeBytes": 2147483648
+    },
+    {
+      "showWhen": "data.isError === true",
+      "type": "Container",
+      "color": "attention",
+      "spacing": "none",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "There was an error",
+          "weight": "bolder",
+          "spacing": "none"
+        },
+        {
+          "type": "TextBlock",
+          "text": "{{ data.errorMessage }}",
+          "spacing": "none"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Cancel",
+      "title": "Back"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/wmfs/cardscript-schema/master/lib/schema.json",
+  "version": "1.0"
+}

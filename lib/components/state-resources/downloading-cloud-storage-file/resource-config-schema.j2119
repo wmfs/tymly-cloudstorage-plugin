@@ -1,0 +1,2 @@
+This document specifies a JSON object called a "RemoteDownload".
+A RemoteDownload MAY have a string field named "provider".

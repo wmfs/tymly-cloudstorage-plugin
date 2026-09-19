@@ -1,0 +1,11 @@
+{
+  "Downloading": {
+    "Type": "Task",
+    "Resource": "module:downloadingCloudStorageFile",
+    "ResourceConfig": {
+      "provider": "sharepoint",
+      "folderPath": "Shared Documents/General/uploads/${keys.uprn}"
+    },
+    "Next": "GetSharepointContents"
+  }
+}
