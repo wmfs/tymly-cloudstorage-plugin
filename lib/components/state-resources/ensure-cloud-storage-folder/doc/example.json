@@ -16,7 +16,7 @@
         "ErrorEquals": [
           "States.ALL"
         ],
-        "End": true
+        "Next": "GetSharepointContents"
       }
     ]
   }
